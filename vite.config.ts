@@ -6,16 +6,14 @@ export default defineConfig({
   define: {
     global: 'globalThis',
     'process.env': {},
-  },
-  resolve: {
-    alias: {
-      './runtimeConfig': './runtimeConfig.browser',
-    },
+    'process.browser': true,
   },
   optimizeDeps: {
-    exclude: ['@aws-amplify/backend'],
+    exclude: ['@aws-amplify/backend', 'aws-cdk-lib', '@aws-cdk'],
   },
-  ssr: {
-    noExternal: ['@aws-amplify/ui-react'],
+  build: {
+    rollupOptions: {
+      external: ['@aws-amplify/backend', 'aws-cdk-lib'],
+    },
   },
 })
