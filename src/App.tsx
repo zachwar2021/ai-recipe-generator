@@ -10,7 +10,7 @@ import "@aws-amplify/ui-react/styles.css";
 Amplify.configure(outputs);
 
 const amplifyClient = generateClient<Schema>({
-  authMode: "apiKey",
+  authMode: "userPool",
 });
 
 function App() {
