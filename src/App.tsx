@@ -6,6 +6,7 @@ import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
+import ReactMarkdown from "react-markdown";
 
 Amplify.configure(outputs);
 
@@ -73,18 +74,22 @@ function App() {
       </form>
 
       <div className="result-container">
-        {loading ? (
-          <div className="loader-container">
-            <p>Loading...</p>
-            <Loader size="large" />
-            <Placeholder size="large" />
-            <Placeholder size="large" />
-            <Placeholder size="large" />
-          </div>
-        ) : (
-          result && <p className="result">{result}</p>
-        )}
-      </div>
+		{loading ? (
+			<div className="loader-container">
+				<p>Loading...</p>
+				<Loader size="large" />
+				<Placeholder size="large" />
+				<Placeholder size="large" />
+				<Placeholder size="large" />
+			</div>
+		) : (
+			result && (
+				<div className="result">
+					<ReactMarkdown>{result}</ReactMarkdown>
+				</div>
+			)
+		)}
+		</div>
     </div>
   );
 }

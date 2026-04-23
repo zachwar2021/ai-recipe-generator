@@ -93,9 +93,30 @@
   border: 1px solid #e9ecef;
   border-radius: 4px;
   padding: 15px;
-  white-space: pre-wrap;
   word-wrap: break-word;
   color: black;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 0.9rem;
   text-align: left; /* Align text to the left */
+}
+
+.result h1, .result h2, .result h3 {
+  margin: 0.1rem 0 0.1rem 0;
+}
+.result ol, .result ul {
+  margin: 0.1rem 0;
+  padding-left: 1.5rem;
+}
+
+.result li {
+  margin-bottom: 0.1rem;
+  line-height: 1.5;
+}
+
+.result li p {
+  display: inline;
+  margin: 0;
+}
+.result p {
+  margin: 0.1rem 0;
 }

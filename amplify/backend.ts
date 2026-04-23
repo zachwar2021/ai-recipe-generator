@@ -22,9 +22,9 @@ const bedrockDataSource = backend.data.resources.graphqlApi.addHttpDataSource(
 bedrockDataSource.grantPrincipal.addToPrincipalPolicy(
   new PolicyStatement({
     resources: [
-      "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0",
+      "arn:aws:bedrock:us-east-1:888577020701:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "arn:aws:bedrock:*::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0",
     ],
     actions: ["bedrock:InvokeModel"],
-    
   })
 );

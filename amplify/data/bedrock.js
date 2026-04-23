@@ -6,7 +6,7 @@ export function request(ctx) {
   
     // Return the request configuration
     return {
-      resourcePath: `/model/anthropic.claude-3-haiku-20240307-v1:0/invoke`,
+      resourcePath: `/model/us.anthropic.claude-haiku-4-5-20251001-v1:0/invoke`,
       method: "POST",
       params: {
         headers: {
@@ -35,5 +35,8 @@ export function response(ctx) {
 		util.error(ctx.error.message, ctx.error.type);
 	}
 	const parsedBody = JSON.parse(ctx.result.body);
-	util.error(JSON.stringify(parsedBody), "DebugResponse");
+	const res = {
+		body: parsedBody.content[0].text,
+	};
+	return res;
 }
