@@ -31,7 +31,8 @@ function App() {
       if (!errors) {
         setResult(data?.body || "No data returned");
       } else {
-        console.log(errors);
+        console.log(JSON.stringify(errors, null, 2));
+		setResult("Error: " + JSON.stringify(errors));
       }
     } catch (e) {
       alert(`An error occurred: ${e}`);
