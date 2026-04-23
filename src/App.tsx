@@ -47,7 +47,7 @@ function App() {
       <div className="header-container">
         <Button onClick={signOut} variation="link">Sign Out</Button>
         <h1 className="main-header">
-          Meet Your Personal
+          Meet Zachary's Personal
           <br />
           <span className="highlight">Recipe AI</span>
         </h1>
